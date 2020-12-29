@@ -4,8 +4,8 @@ import uvicorn
 api = fastapi.FastAPI()
 
 @api.get('/api/calculate')
-def calculate():
-    value = 2+2
+def calculate(x: int, y: int, z: int = 10):
+    value = (x+y)*z
     return {
         'value': value,
         'value2': 6,
